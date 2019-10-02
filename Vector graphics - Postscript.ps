@@ -1,0 +1,62 @@
+% Draw circle
+newpath
+300 400 50 0 360 arc 
+closepath
+gsave
+0 0 1 setrgbcolor
+fill
+grestore
+4 setlinewidth
+stroke
+
+% Draw triangle
+newpath
+300 400 moveto
+400 300 lineto
+200 300 lineto
+closepath
+gsave
+1 0 0 setrgbcolor
+fill
+grestore
+4 setlinewidth
+stroke
+
+% Set font for words
+/Times-Roman findfont
+12 scalefont
+setfont
+
+% Write words
+newpath
+100 600 moveto
+(Yong Loong Ang & Jarrett Shan Wei Yeo) show
+closepath
+
+% Procedure for concatenating strings because PostScript is as good as an assembly language
+% Source: http://en.wikibooks.org/wiki/PostScript_FAQ#How_to_concatenate_strings.3F
+/concatstrings % (a) (b) -> (ab)  
+{ exch dup length    
+    2 index length add string    
+    dup dup 4 2 roll copy length
+    4 -1 roll putinterval
+} bind def 
+
+% ======================
+
+% Variable definitions for loop
+/y 550 def % y is y-coordinate
+/i 1 def % i is line number
+/line (Line ) def % line is placeholder text which contains "Line "
+/s 20 string def % s is a temp string to contain integer i after it is converted to a string
+
+% Loop 10 times
+10 {
+    newpath
+    100 y moveto
+    i s cvs % we use cvs procedure to convert int i to string s
+    line s concatstrings show % we concat "Line " and s together
+    closepath        
+    /y y -50 add def % minus y-coordinate by 50
+    /i i 1 add def % i++
+} repeat

@@ -1,0 +1,8 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ 
+  <rect id="rectangle" height="300" width="300" x="100" y="75" stroke-width="1.5" stroke="#ffffff" fill="#8e8e8e"/>
+  <ellipse rx="100" ry="100" id="circle" cx="250" cy="225" stroke-width="1.5" stroke="#000000" fill="#ffffff"/>
+  <text font-size="24" id="text" x="175" y="200" stroke-width="0" stroke="#000000" fill="#000000">Hello, world!</text>
+  <polygon id="triangle" points="250,275 325,350 175,350" style="fill:blue;stroke:white;stroke-width:1" />
+
+</svg>

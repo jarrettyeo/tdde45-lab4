@@ -1,0 +1,23 @@
+digraph statediagram {
+rankdir=LR
+  { 
+    node [shape=none]
+    start [label="start"]
+  }
+  { 
+    node [shape=circle]
+    s0 [label=<S<sub>0</sub>>]
+    s1 [label=<S<sub>1</sub>>]
+  }
+  { 
+    node [shape=doublecircle]
+    s2 [label=<S<sub>2</sub>>]
+  }
+  start -> s0
+  s0 -> s0 [label="b"]
+  s0 -> s1 [label="a"]
+  s1 -> s1 [label="a"]
+  s1 -> s2 [label="b"]
+  s2 -> s1 [label="a"]
+  s2 -> s0 [label="b"]
+}
